@@ -45,7 +45,7 @@ public class CiudadTest {
             IllegalAccessException {
         System.out.println("establecerNombre");
         String nom = "Loja";
-        instance.establecerNombre(nom);
+        instance.establecerNombres(nom);
         Field field = instance.getClass().getDeclaredField("nombre");
         field.setAccessible(true);
         assertEquals(field.get(instance), "Loja");
@@ -55,7 +55,7 @@ public class CiudadTest {
     public void testObtenerNombres() {
         System.out.println("obtenerNombre");
         String nom = "Loja";
-        instance.establecerNombre(nom);
+        instance.establecerNombres(nom);
         assertEquals(instance.obtenerNombre(), "Loja");
     }
     
@@ -82,7 +82,7 @@ public class CiudadTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        instance.establecerNombre("Cuenca");
+        instance.establecerNombres("Cuenca");
         instance.establecerPoblacion(500123);
         
         String expResult = String.format("Ciudad de Ecuador\n Nombre: %s\n\n\t"
